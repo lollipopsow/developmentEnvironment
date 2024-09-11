@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
 
     entry: {
       app: path.resolve(__dirname, "./src/assets/js/index.js"),
-      "app.css": path.resolve(__dirname, "./src/assets/_scss/app.scss"),
+      "app.css": path.resolve(__dirname, "./src/assets/scss/app.scss"),
     },
 
     output: {
@@ -31,17 +31,13 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
-      // new CleanWebpackPlugin({
-      //   cleanOnceBeforeBuildPatterns: ["**/*"],
-      // }),
+      new CleanWebpackPlugin({
+        cleanOnceBeforeBuildPatterns: ["**/*"],
+      }),
       new FixStyleOnlyEntriesPlugin(),
       new MiniCssExtractPlugin({
         filename: "assets/css/[name]",
       }),
-    ],
-
-    watchOptions: {
-      ignored: /node_modules/,
-    },
+    ]
   };
 };
