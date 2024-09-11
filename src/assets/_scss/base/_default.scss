@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+body {
+	background: white;
+	color: #333;
+	font-family: $font-gothic;
+	font-size: 16px;
+	height: 100%;
+	line-height: 1;
+	text-align: left;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@include media(sp) { font-size: 13px;}
+}
+
+a {
+	display: block;
+
+	&:link,
+	&:visited,
+	&:active,
+	&:hover { text-decoration: none;}
+}
+
+img {
+	vertical-align: bottom;
+	width: 100%;
+}
+
+svg {
+	height: 100%;
+	vertical-align: bottom;
+	width: 100%;
+}
+
+.sp {
+	&-only {
+		display: none;
+
+		@include media(sp) { display: block;}
+	}
+
+	&-none {
+		@include media(sp) { display: none;}
+	}
+}

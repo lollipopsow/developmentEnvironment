@@ -1,0 +1,83 @@
+@use "sass:map";
+@use "variables" as *;
+
+$breakpoints: (
+  'pc': "screen and (min-width: 769px)",
+  'liq': "screen and (max-width: 1200px)",
+  'tab': "screen and (max-width: 1024px)",
+  'sp': "screen and (max-width: 768px)"
+) !default;
+
+@mixin media($breakpoint: media) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// hover
+@mixin hover() {
+  @include media(pc) {
+    &:hover { @content;}
+  }
+}
+
+// dark-mode
+@mixin dark() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+// css hack
+@mixin hack($browser) {
+  // IE
+  @if $browser == 'ie' {
+    @media all and (-ms-high-contrast: none){
+      @at-root *::-ms-backdrop, & {
+        @content;
+      }
+    }
+  }
+
+  // chrome
+  @else if $browser == 'chrome' {
+    @media screen and (-webkit-min-device-pixel-ratio:0){ @content;}
+  }
+
+  // safari
+  @else if $browser == 'safari' {
+    @at-root _::-webkit-full-page-media, _:future, :root & { @content}
+  }
+
+  // Firefox
+  @else if $browser == 'firefox' {
+    @-moz-document url-prefix(){ @content;}
+  }
+}
+
+// clearfix
+@mixin cf() {
+  &::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+
+// itemCenter
+@mixin itemCenter($mt: 0, $mb: 0) {
+  @if($mt == 0) {
+    @if($mb == 0) {
+      margin-right: auto;
+      margin-left: auto;
+    } @else {
+      margin: $mt auto $mb;
+    }
+  } @else {
+    @if($mt == $mb) {
+      margin: $mt auto;
+    } @else {
+      margin: $mt auto $mb;
+    }
+  }
+}

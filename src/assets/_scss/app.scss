@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@use "./base/_normalize";
+@use "./base/_base";
+@use "./base/_default";
+
+// Components
+// @use "";
+
+// Layouts
+@use "layouts/_l-header";
+@use "layouts/_l-footer";
+
+// Pages
+@use "pages/index";

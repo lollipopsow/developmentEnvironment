@@ -1,0 +1,21 @@
+include /_base/_mixin
+
+block variables
+
+doctype html
+html(lang="ja")
+  head
+    include _meta
+    include /_include/measurement_tags/_analysisTags_headBottom
+
+  body(class=bodyClass)
+    include /_include/measurement_tags/_analysisTags_body
+    include /_include/_header
+
+    block contents
+
+    include /_include/_footer
+
+    block scripts
+      script(src=pageDirectory + js_path + "vendor.js")
+      script(src=pageDirectory + js_path + "app.js")

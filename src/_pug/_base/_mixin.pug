@@ -1,0 +1,5 @@
+//- picture img
+mixin img(width, path, imageName, alt, className)
+  picture
+    source(media=`(min-width: ${width}px)`, srcset=path + imageName)
+    img(src=path + "sp/" + imageName, alt=alt, class=className)

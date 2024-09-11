@@ -1,0 +1,30 @@
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+meta(name="format-detection", content="telephone=no")
+title #{page.title}#{pages.title}
+include /_include/measurement_tags/_analysisTags_headTop
+meta(name="description", content!=pages.description)
+meta(name="keywords", content!=pages.keyword)
+
+meta(name="apple-mobile-web-app-title" content!=pages.siteName)
+
+link(rel="icon" href="/assets/images/favicon.ico")
+link(rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico")
+
+meta(property="og:locale", content!="ja_JP")
+meta(property="og:site_name", content!=pages.siteName)
+meta(property="og:type", content!=page.ogType)
+meta(property="og:title", content!=page.title + pages.title)
+meta(property="og:url", content!=pages.pageUrl + page.directory)
+meta(property="og:description", content!=pages.description)
+meta(property="og:image", content!=pages.pageUrl + "assets/images/og.png")
+
+meta(name="twitter:card", content!="summary_large_image")
+meta(name="twitter:title", content!=page.title + pages.title)
+meta(name="twitter:description", content!=pages.description)
+meta(name="twitter:image", content!=pages.pageUrl + "assets/images/og.png")
+meta(name="twitter:url", content!=pages.pageUrl + page.directory)
+
+block css
+  link(rel="stylesheet", href= pageDirectory + css_path + "style.css")

@@ -1,0 +1,121 @@
+extends /_base/_layout
+
+block variables
+  include /_base/_config
+  - var pageDirectory = ''
+  - var pageName = 'top'
+  - var page = pages.page[pageName]
+  //- ページ設定
+  - var pageCategory = ''
+  - var language = 'jp'
+  - var bodyClass = ''
+
+block contents
+  +img(769, 'assets/images/', "name.jpg", "おるとーーーー", "className")
+
+  br
+  br
+  p#111 111
+  p#222 222
+
+  p アコーディオン
+  .c-acc__wrap
+    button.c-acc__btn.js-accBtn アコーディオンボタン
+    .c-acc__inner.js-accCon
+      p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+
+    button.c-acc__btn.js-accBtn.isActive アコーディオンボタン
+    .c-acc__inner.js-accCon.isOpen
+      p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+  
+  br
+  br
+
+  p スライダー
+  .c-slider
+    ul.swiper-wrapper
+      li.swiper-slide: img(src="https://placehold.jp/150x150.png?text=slider01", alt="")
+      li.swiper-slide: img(src="https://placehold.jp/150x150.png?text=slider02", alt="")
+      li.swiper-slide: img(src="https://placehold.jp/150x150.png?text=slider03", alt="")
+      li.swiper-slide: img(src="https://placehold.jp/150x150.png?text=slider04", alt="")
+      li.swiper-slide: img(src="https://placehold.jp/150x150.png?text=slider05", alt="")
+      li.swiper-slide: img(src="https://placehold.jp/150x150.png?text=slider06", alt="")
+      li.swiper-slide: img(src="https://placehold.jp/150x150.png?text=slider07", alt="")
+
+    .c-slider__pagination
+
+    button(type="button" class="c-slider__btn c-slider__btn-prev") prev
+    button(type="button" class="c-slider__btn c-slider__btn-next") next
+
+  br
+  br
+  p モーダル
+  button.c-modal__btn.js-modalBtn モーダル
+
+  .c-modal.js-modal
+    .c-modal__inner
+      button.c-modal__close.js-modalCloseBtn 閉じる
+      p モーダル中身
+
+  br
+  br
+  p アニメーション
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  p.thisSlideUp(style="height: 300px; background: #eee") スライドアップ
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  p.thisFadeIn(style="height: 300px; background: #eee") フェードイン
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  p: a(href="#") top
+  p: a(href="#111") 11111
+  p: a(href="#222") 22222
