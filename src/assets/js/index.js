@@ -1,6 +1,6 @@
 'use strict';
 
-import pageAnchor from './class/pageAnchor'
+import pageAnchor from './utils/pageAnchor'
 import smoothscroll from 'smoothscroll-polyfill'
 
 window.addEventListener('DOMContentLoaded',() => {
